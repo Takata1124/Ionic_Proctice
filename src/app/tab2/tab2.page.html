@@ -10,14 +10,17 @@
   
   <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title size="large">Tab 2</ion-title>
       </ion-toolbar>
     </ion-header>
   
-    <ion-button align="center" (click)="getPicture()">Default</ion-button>
-    <!-- <div id="message"></div> -->
-  
-    <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
+    
+    <div class="ion-padding"  align="center">
+      <img src="" id="image" width="200px" height="200px">
+    </div>
+    <div class="ion-padding"  align="center">
+      <ion-button (click)="getPicture()">カメラ撮影</ion-button>
+    </div>
   </ion-content>
 </body>

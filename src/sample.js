@@ -11,7 +11,7 @@ function ChangeItem() {
 // 写真撮影が成功した時
 function cameraSuccess(image){
     var img = document.getElementById("image");
-    // img.src = "data:image/jpeg;base64," + image;
+    img.src = "data:image/jpeg;base64," + image;
 }
 // 失敗した時
 function cameraError(message){
