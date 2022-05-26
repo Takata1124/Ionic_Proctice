@@ -1,26 +1,18 @@
-
-<body>
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>
-        Tab 2
-      </ion-title>
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>カメラ</ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="openMenu()"><ion-icon name="reorder-three-outline"></ion-icon></ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  
-  <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-      <ion-toolbar color="primary">
-        <ion-title size="large">Tab 2</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    
-    <div class="ion-padding"  align="center">
-      <img src="" id="image" width="200px" height="200px">
-    </div>
-    <div class="ion-padding"  align="center">
-      <ion-button (click)="getPicture()">カメラ撮影</ion-button>
-    </div>
-  </ion-content>
-</body>
+
+  <div class="ion-padding"  align="center">
+    <img src="" id="image" width="200px" height="200px">
+  </div>
+  <div class="ion-padding"  align="center">
+    <ion-button (click)="getPicture()">カメラ撮影</ion-button>
+  </div>
+</ion-content>
+

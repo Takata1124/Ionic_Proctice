@@ -1,17 +1,29 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Tab 3
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header>
     <ion-toolbar color="primary">
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title>API通信</ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="openMenu()"><ion-icon name="reorder-three-outline"></ion-icon></ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-content padding class="News">
+    <ion-list>
+      <ion-item *ngFor="let i of items" [navPush]="'ArticlePage'" [navParams]="{ index: i }" class="news">
+        <div>
+            <h4>{{i.title}}</h4>
+            <p>{{i.pubDate}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-content>

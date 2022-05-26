@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { InputItemPage } from '../input-item/input-item.page';
 import { Storage } from '@ionic/storage';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -11,27 +12,24 @@ import { Storage } from '@ionic/storage';
 
 export class Tab1Page {
 
-  public cnt: number = 0;
   returnedData: any;
+  public items = [];
 
   private _storage: Storage | null = null;
 
   constructor(
     public navCtrl: NavController,
     private modalCtrl: ModalController,
-    private storage: Storage
+    private storage: Storage,
   ) {
     this.init();
   }
-
-  public items = [];
 
   async init() {
     console.log('読み込み');
     const storage = await this.storage.create();
     this._storage = storage;
     this._storage.get('items').then((items) => {
-        // console.log(items)
         this.items = items ? items : [];
       });
   }
@@ -43,10 +41,9 @@ export class Tab1Page {
 
     modal.onDidDismiss().then((returnedData) => {
       if (returnedData.data !== '') {
-        // console.log(returnedData.data)
+        console.log(returnedData.data)
         this.items.push({ title: returnedData.data, isChecked: false })
         this.updateStorageData();
-        // this.returnedData = returnedData.data; //モーダルから受け取った文字列
       }
     });
 
@@ -66,8 +63,10 @@ export class Tab1Page {
 
   updateCucumber(item) {
     // console.log('Cucumbers new state:' + item.isChecked);
-    console.log(item.title)
-    const index = item.findIndex(({title}) => title === item.title); 
-    console.log(index)
+    // console.log(item.title)
+    // console.log(this.items)
+    // const index = this.items.findIndex(({title}) => title === item.title); 
+    // console.log(index)
+    this.updateStorageData();
   }
 }

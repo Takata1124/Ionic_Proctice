@@ -17,3 +17,11 @@ function cameraSuccess(image){
 function cameraError(message){
     alert("Failed!!: " + message);
 }
+
+function selectText() {
+    console.log('タップされました');
+    const input = document.getElementById('myInput');
+
+    // input.select();
+}
+

@@ -8,12 +8,15 @@ import { InputItemPageRoutingModule } from './input-item-routing.module';
 
 import { InputItemPage } from './input-item.page';
 
+import { NgCalendarModule  } from 'ionic2-calendar';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InputItemPageRoutingModule
+    InputItemPageRoutingModule,
+    NgCalendarModule
   ],
   declarations: [InputItemPage]
 })

@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'input-item',
     loadChildren: () => import('./input-item/input-item.module').then( m => m.InputItemPageModule)
+  },
+  {
+    path: 'tab4',
+    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
   }
 ];
 @NgModule({
