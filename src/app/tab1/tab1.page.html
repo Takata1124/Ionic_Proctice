@@ -9,7 +9,7 @@
   </ion-header>
 
   <!-- <ion-content padding> -->
-    <ion-searchbar></ion-searchbar>
+    <!-- <ion-searchbar></ion-searchbar> -->
     <div class="ion-padding">
       <ion-button expand="block" fill="outline" (click)="presentModal()">リストの追加</ion-button>
     </div>
@@ -18,7 +18,7 @@
         <ion-item>
           <div class="ion-padding">
             <h5>{{item.title}}</h5>
-            <h5>{{item.title}}</h5>
+            <h5>{{item.date}}</h5>
           </div>
           <ion-checkbox slot="start" color="light" [(ngModel)]="item.isChecked" (ionChange)="updateCucumber(item)"></ion-checkbox>
         </ion-item>

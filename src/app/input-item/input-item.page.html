@@ -8,38 +8,40 @@
     </ion-toolbar>
   </ion-header>
   <!-- <ion-content padding> -->
-    <div class="main" ng-app="myApp">
-      <div class="ion-padding" align="center">
-        <p>{{selectedMonth}}</p>
-        <calendar [eventSource]="eventSource"
-                [calendarMode]="calendar.mode"
-                [currentDate]="calendar.currentDate"
-                (onCurrentDateChanged)="onCurrentDateChanged($event)"
-                (onEventSelected)="onEventSelected($event)"
-                (onTitleChanged)="onViewTitleChanged($event)"
-                (onTimeSelected)="onTimeSelected($event)"
-                [step]="calendar.step">
-        </calendar>
-      </div>
-      <div class="ion-padding" align="center">
-        <p>入力結果；{{values}}</p>
-        <p>日付；{{selectedDate}}</p>
-      </div>
+  <div class="main" ng-app="myApp">
+    <div class="ion-padding" align="center">
+      <p>{{selectedMonth}}</p>
+      <calendar [eventSource]="eventSource"
+              [calendarMode]="calendar.mode"
+              [currentDate]="calendar.currentDate"
+              (onCurrentDateChanged)="onCurrentDateChanged($event)"
+              (onEventSelected)="onEventSelected($event)"
+              (onTitleChanged)="onViewTitleChanged($event)"
+              (onTimeSelected)="onTimeSelected($event)"
+              [step]="calendar.step">
+      </calendar>
     </div>
-  <!-- </ion-content> -->
-  <ion-footer>
-    <ion-toolbar color="primary">
-      <div class="ion-padding" align="center">
-        <ion-item>
-          <ion-label>入力欄；</ion-label>
-          <ion-input placeholder="Text Input"  #box (keyup.enter)="onEnter(box.value)" id="myInput" [(ngModel)]="value"></ion-input>
-        </ion-item>
-      </div>
-      <div class="ion-padding" align="center">
-        <ion-button fill="outline" color="dark" size="default" (click)="close()">追加する</ion-button>
-        <ion-button fill="outline" color="dark" size="default" (click)="close()">閉じる</ion-button>
-        <ion-button fill="outline" color="dark" size="default" (click)="value=''">クリアする</ion-button>
-      </div>
-    </ion-toolbar>
-  </ion-footer>
+    <div class="ion-padding" align="center">
+      <p>入力結果；{{values}}</p>
+      <p>日付；{{selectedDate}}</p>
+    </div>
+  </div>
+  <div class="ion-padding" align="center">
+    <ion-item>
+      <ion-label>入力欄；</ion-label>
+      <ion-input placeholder="入力してください"  #box (keyup.enter)="onEnter(box.value)" id="myInput" [(ngModel)]="value"></ion-input>
+    </ion-item>
+  </div>
 </ion-content>
+
+<ion-tab-bar slot="bottom" color="primary">
+  <ion-tab-button tab="account">
+    <ion-button fill="outline" color="light" size="small" (click)="close()">追加する</ion-button>
+  </ion-tab-button>
+  <ion-tab-button tab="contact">
+    <ion-button fill="outline" color="light" size="small" (click)="close()">閉じる</ion-button>
+  </ion-tab-button>
+  <ion-tab-button tab="settings">
+    <ion-button fill="outline" color="light" size="small" (click)="value=''">クリアする</ion-button>
+  </ion-tab-button>
+</ion-tab-bar>

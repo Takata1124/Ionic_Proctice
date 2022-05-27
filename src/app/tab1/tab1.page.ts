@@ -40,9 +40,9 @@ export class Tab1Page {
     });
 
     modal.onDidDismiss().then((returnedData) => {
-      if (returnedData.data !== '') {
+      if (returnedData.data[0] !== '') {
         console.log(returnedData.data)
-        this.items.push({ title: returnedData.data, isChecked: false })
+        this.items.push({ title: returnedData.data[0], date: returnedData.data[1] ,isChecked: false })
         this.updateStorageData();
       }
     });
@@ -62,11 +62,6 @@ export class Tab1Page {
   }
 
   updateCucumber(item) {
-    // console.log('Cucumbers new state:' + item.isChecked);
-    // console.log(item.title)
-    // console.log(this.items)
-    // const index = this.items.findIndex(({title}) => title === item.title); 
-    // console.log(index)
     this.updateStorageData();
   }
 }

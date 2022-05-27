@@ -30,7 +30,9 @@ export class InputItemPage implements OnInit {
   }
 
   close() {
-    this.modalCtrl.dismiss(this.values);
+    var dismissItem = [this.values, this.selectedDate];
+    // this.modalCtrl.dismiss(this.values);
+    this.modalCtrl.dismiss(dismissItem);
   }
 
   select() {

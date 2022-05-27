@@ -1,28 +1,33 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="no-scroll">
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>API通信</ion-title>
       <ion-buttons slot="start">
-        <ion-button (click)="openMenu()"><ion-icon name="reorder-three-outline"></ion-icon></ion-button>
+        <ion-button (click)="reloadItem()"><ion-icon name="reorder-three-outline"></ion-icon></ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="reloadItem()"><ion-icon name="refresh-outline"></ion-icon></ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
   <ion-content padding class="News">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
     <ion-list>
-      <ion-item *ngFor="let i of items" [navPush]="'ArticlePage'" [navParams]="{ index: i }" class="news">
-        <div>
-            <h4>{{i.title}}</h4>
-            <p>{{i.pubDate}}</p>
+      <ion-item *ngFor="let i of items" class="news">
+        <ion-buttons slot="start">
+          <ion-button color="primary" size="small"><ion-icon name="star-outline"></ion-icon></ion-button>
+        </ion-buttons>
+        <div >
+            <h6>{{i.title}}</h6>
+            <h6>{{i.pubDate}}</h6>
         </div>
+        <ion-buttons slot="end">
+          <ion-button fill="outline" color="primary" size="small" (click)="touchStart($event, i)">開く</ion-button>
+        </ion-buttons>
       </ion-item>
     </ion-list>
   </ion-content>
