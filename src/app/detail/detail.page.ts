@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, Platform } from '@ionic/angular';
+// import { ModalController, Platform } from '@ionic/angular';
 
-// import {
-//   InAppBrowser
-// } from '@awesome-cordova-plugins/in-app-browser/ngx';
-// import { url } from 'inspector';
+declare var opneUrlPage: any;
 
 @Component({
   selector: 'app-detail',
@@ -14,15 +11,18 @@ import { ModalController, Platform } from '@ionic/angular';
 export class DetailPage implements OnInit {
 
   constructor(
-    private modalCtrl: ModalController,
-    public platform: Platform, 
+    // private modalCtrl: ModalController,
+    // public platform: Platform, 
     // private iab: InAppBrowser
   ) { }
 
   ngOnInit() {
 
-    // const browser = this.iab.create('https://ionic.io','_self',{location:'no'});
-    // this.openUrl('https://codenote.net/mobile-app-framework/4072.html');
+    
+  }
+
+  open() {
+    opneUrlPage();
   }
 
   // openUrl(url: string) {
@@ -32,9 +32,4 @@ export class DetailPage implements OnInit {
   //   // });
   //   window.open(url, '_system', 'location=yes')
   // }
-
-  close() {
-    this.modalCtrl.dismiss();
-  }
-
 }

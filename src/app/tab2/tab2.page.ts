@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-declare var ChangeItem: any;
+// declare var ChangeItem: any;
+declare var openUrlPage: any;
 
 @Component({
   selector: 'app-tab2',
@@ -12,7 +13,7 @@ export class Tab2Page {
   constructor() {}
 
   getPicture() {
-    // console.log('hello');
-    ChangeItem();
+    openUrlPage();
+    // ChangeItem();
   }
 }

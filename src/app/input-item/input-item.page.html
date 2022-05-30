@@ -22,13 +22,13 @@
       </calendar>
     </div>
     <div class="ion-padding" align="center">
-      <p>入力結果；{{values}}</p>
-      <p>日付；{{selectedDate}}</p>
+      <p>入力結果：{{values}}</p>
+      <p>日付：{{selectedDate}}</p>
     </div>
   </div>
   <div class="ion-padding" align="center">
     <ion-item>
-      <ion-label>入力欄；</ion-label>
+      <ion-label>入力欄：</ion-label>
       <ion-input placeholder="入力してください"  #box (keyup.enter)="onEnter(box.value)" id="myInput" [(ngModel)]="value"></ion-input>
     </ion-item>
   </div>

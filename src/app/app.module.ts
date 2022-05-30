@@ -13,9 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 // import { InAppBrowser } from '@ionic-native/in-app-browser';
 
-// import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
-// import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
-// import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
     // InAppBrowser
     // SQLite,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ 
+    provide: RouteReuseStrategy, 
+    useClass: IonicRouteStrategy,
+    // Camera
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

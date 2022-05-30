@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./page/jsutloader/jsutloader.module').then( m => m.JsutloaderPageModule)
   },
   {
     path: 'input-item',
@@ -17,6 +17,26 @@ const routes: Routes = [
   {
     path: 'detail',
     loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'loader',
+    loadChildren: () => import('./page/loader/loader.module').then( m => m.LoaderPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./page/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'user-page',
+    loadChildren: () => import('./page/user-page/user-page.module').then( m => m.UserPagePageModule)
+  },
+  {
+    path: 'jsutloader',
+    loadChildren: () => import('./page/jsutloader/jsutloader.module').then( m => m.JsutloaderPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./page/login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({

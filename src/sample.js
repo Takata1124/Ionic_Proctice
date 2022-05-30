@@ -1,5 +1,4 @@
 function ChangeItem() {
-    // document.getElementById('message').innerText ='Hello!!';
     navigator.camera.getPicture(cameraSuccess, cameraError, { 
         quality: 80, 
         destinationType: Camera.DestinationType.DATA_URL,
@@ -18,10 +17,8 @@ function cameraError(message){
     alert("Failed!!: " + message);
 }
 
-function selectText() {
-    console.log('タップされました');
-    const input = document.getElementById('myInput');
-
-    // input.select();
+function openUrlPage() {
+    const url = 'https://cpoint-lab.co.jp/article/201902/8185/';
+    cordova.InAppBrowser.open(url, '_blank', 'location=no');
 }
 

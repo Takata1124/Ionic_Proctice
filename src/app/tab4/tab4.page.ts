@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+
+declare var openUrlPage: any;
 
 @Component({
   selector: 'app-tab4',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab4Page implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  openMenu() {
+    // openUrlPage();
+    console.log("hello")
+    this.router.navigate(['../tab1/tab1.module']);
   }
 
 }
